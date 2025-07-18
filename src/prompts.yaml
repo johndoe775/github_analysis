@@ -25,7 +25,7 @@ cold_mail_and_person_info:
 
     Resume: {resume}
 
-    Person Information: {person_info}
+    Person Information: {personal_info}
 
     Instructions:
     1) Use the available experience, projects, and skills from the resume to write the cold mail.
