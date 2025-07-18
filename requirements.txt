@@ -10,4 +10,4 @@ langchain
 langchain_community
 gitpython
 sentence-transformers
-ipykernal
+pypdf
