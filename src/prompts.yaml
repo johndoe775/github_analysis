@@ -28,11 +28,14 @@ cold_mail_and_person_info:
     Person Information: {personal_info}
 
     Instructions:
+    0) write in first person.
     1) Use the available experience, projects, and skills from the resume to write the cold mail.
     2) The tone must be professional and inquisitive, seeking job opportunities.
     3) Don't hallucinate.
     4) Don't use any external data but only the resume and person information.
     5) Don't mention any comments and preamble in the response.
+    6) Make sure that the entire message is conveyed in not more than 5 lines.
+    7) End with regards.
     """
   
   inputs:
@@ -47,11 +50,14 @@ cold_mail_no_personal_info:
     Resume: {resume}
 
     Instructions:
+    0) write in first person.
     1) Use the available experience, projects, and skills from the resume to write the cold mail.
     2) The tone must be professional and inquisitive, seeking job opportunities.
     3) Don't hallucinate.
     4) Don't use any external data but only the resume.
     5) Don't mention any comments and preamble in the response.
+    6) Make sure that the entire message is conveyed in not more than 5 lines.
+    7) End with regards.
     """
   
   inputs:
