@@ -18,16 +18,17 @@ resume_and_job_decription_rewrite:
     {"resume":"resume", "job_description":"job_description"}
 
 cold_mail_and_person_info:
-  tool_use_case: "use this tool to write a professional and inquisitive cold mail tailored to a person's information, seeking job opportunities."
+  tool_use_case: "use this tool to write a professional and inquisitive cold mail tailored to a personal information of the recruiter, seeking job opportunities."
   prompt: |
     """
     Using the following resume, write a professional and inquisitive cold mail tailored to the provided person's information, seeking job opportunities:
 
     Resume: {resume}
 
-    Person Information: {personal_info}
+    Person Information of the recruiter: {personal_info}
 
     Instructions:
+    -1) Start with salutaion hi
     0) write in first person.
     1) Use the available experience, projects, and skills from the resume to write the cold mail.
     2) The tone must be professional and inquisitive, seeking job opportunities.
@@ -35,7 +36,7 @@ cold_mail_and_person_info:
     4) Don't use any external data but only the resume and person information.
     5) Don't mention any comments and preamble in the response.
     6) Make sure that the entire message is conveyed in not more than 5 lines.
-    7) End with regards.
+    7) End with regards and the name of ther person whose resume is being used.
     """
   
   inputs:
@@ -50,6 +51,7 @@ cold_mail_no_personal_info:
     Resume: {resume}
 
     Instructions:
+    -1) Start with salutaion hi
     0) write in first person.
     1) Use the available experience, projects, and skills from the resume to write the cold mail.
     2) The tone must be professional and inquisitive, seeking job opportunities.
@@ -57,7 +59,7 @@ cold_mail_no_personal_info:
     4) Don't use any external data but only the resume.
     5) Don't mention any comments and preamble in the response.
     6) Make sure that the entire message is conveyed in not more than 5 lines.
-    7) End with regards.
+    7) End with regards and the name of ther person whose resume is being used.
     """
   
   inputs:

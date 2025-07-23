@@ -1,76 +1,55 @@
-Summary
 
- Position Summary 
+We are PepsiCo
 
-Job Role: Data Scientist Consultant
+PepsiCo is one of the world's leading food and beverage companies with more than $79 Billion in Net Revenue and a global portfolio of diverse and beloved brands. We have a complementary food and beverage portfolio that includes 22 brands that each generate more than $1 Billion in annual retail sales. PepsiCo's products are sold in more than 200 countries and territories around the world. PepsiCo's strength is its people. We are over 250,000 game changers, mountain movers and history makers, located around the world, and united by a shared set of values and goals. 
 
-New Business Innovation anticipates how technology will shape the future and begins building future capabilities and practices today. NBI drives the Ideation, Incubation and scale of hybrid businesses and tech enabled offerings at prioritized offering portfolio and industry interactions.
 
-It drives cultural and capability transformation from solely services – based businesses to hybrid businesses. While others bet on the future, NBI builds it with you. NBI partners with the network such as converge, Small factory, True Serve, Cortex AI to build hybrid businesses, enterprise platforms and incubate emerging practices to future proof business and help clients get there, first.
 
-NBI encompasses many teams—dreamers, designers, builders—and partners with the business to bring a unique POV to deliver services and products for clients.
+We believe that acting ethically and responsibly is not only the right thing to do, but also the right thing to do for our business. At PepsiCo, we aim to deliver top-tier financial performance over the long term by integrating sustainability into our business strategy, leaving a positive imprint on society and the environment. We call this Winning with Pep+ Positive. For more information on PepsiCo and the opportunities it holds, visit www.pepsico.com.
+PepsiCo Data Analytics & AI Overview:
 
-Work you’ll do
+ 
+With data deeply embedded in our DNA, PepsiCo Data, Analytics and AI (DA&AI) transforms data into consumer delight. We build and organize business-ready data that allows PepsiCo’s leaders to solve their problems with the highest degree of confidence. Our platform of data products and services ensures data is activated at scale. This enables new revenue streams, deeper partner relationships, new consumer experiences, and innovation across the enterprise.
+The Data Science Pillar in DA&AI will be the organization where Data Scientist and ML Engineers report to in the broader D+A Organization. Also DS will lead, facilitate and collaborate on the larger DS community in PepsiCo. DS will provide the talent for the development and support of DS component and its life cycle within DA&AI Products. And will support “pre-engagement” activities as requested and validated by the prioritization framework of DA&AI.
 
-Key job responsibilities include but are not limited to…
 
-The Commercial Insights Senior Data Scientist will work closely with the Commercial Insights India Lead to deliver innovative and transformative data science solutions. The Data Scientist will be consistently challenged— leveraging both existing strengths and developing new skills. Soutions will range from natural language processing to time series algorithms to more straightforward regression/classification modeling .
+Data Scientist-Gurugram and Hyderabad
 
-The Data Scientist will be responsible for understanding the business requirements and making sure the technical environment and solution fulfill those business requirements in the most efficient way. In order to do this, he/she will work with  and mentor fellow Commercial Insights Data Scientists, designers, IT professionals, software developers, and his/her own network. Due to the nature of the sales process, work take place in a constantly evolving environment, so agility and flexibility will be critical.
 
-Specific responsibilities include:
 
- Develop a deep understanding of the Consulting sales process 
- Interrogate the data stored in the MS Azure data science lab and other secure locations 
- Collect and document business requirements 
- Develop industry-leading designs 
- Develop the solution—either programming directly, or serving as an advisor to more junior programmers 
- Test the solution 
- Coordinate industrialization of the solution so that it can be used throughout Deloitte Consulting US 
- Participate in a network of data scientists across Deloitte departments to ensure a culture of inclusivity and innovation 
- Commit to continuous improvement and learning—both personally and in support of team members 
- Provide honest and open transparency into work successes and challenges 
+The role will work in developing Machine Learning (ML) and Artificial Intelligence (AI) projects. Specific scope of this role is to develop ML solution in support of ML/AI projects using big analytics toolsets in a CI/CD environment. Analytics toolsets may include DS tools/Spark/Databricks, and other technologies offered by Microsoft Azure or open-source toolsets. This role will also help automate the end-to-end cycle with Machine Learning Services and Pipelines. 
 
-The Team
+ 
+Responsibilities
 
- Partner responsible for informing and accelerating your hybrid business with market-led, offering perspective to incubate differentiated client opportunities from possibility to scaled profitability. 
- Steward of Deloitte’s investment in Hybrid Businesses that drive new and sustained value for Deloitte stakeholders. 
+Delivery of key Advanced Analytics/Data Science projects within time and budget, particularly around DevOps/MLOps and Machine Learning models in scope 
+Collaborate with data engineers and ML engineers to understand data and models and leverage various advanced analytics capabilities 
+Ensure on time and on budget delivery which satisfies project requirements, while adhering to enterprise architecture standards 
+Use big data technologies to help process data and build scaled data pipelines (batch to real time) 
+Automate the end-to-end ML lifecycle with Azure Machine Learning and Azure/AWS/GCP Pipelines.
+Setup cloud alerts, monitors, dashboards, and logging and troubleshoot machine learning infrastructure 
+Automate ML models deployments 
 
-Qualifications And Experience
 
-Required:
+Qualifications
 
- Strong verbal and written English communication skills 
- Deep curiosity about the Consulting sales process 
- Proactive, self-motivated and demonstrated ability to work independently with minimal guidance 
- Strong interpersonal skills 
- Knowledge of current data science techniques and passion for staying current 
- Familiarity with MS Azure and Data Bricks 
- Familiarity with Tableau 
- Data munging skills using R and Python 
- Strong data science skills 
- Deep insights into statistical modeling and simulation tools Python 
- Good understanding and implementation of complex data science algorithms 
- Experience with Big Data execution using PySpark 
- Strong knowledge of statistics 
- Experience with Machine Learning and deployment and maintenance of models 
 
-Our purpose
 
-Deloitte’s purpose is to make an impact that matters for our people, clients, and communities. At Deloitte, purpose is synonymous with how we work every day. It defines who we are. Our purpose comes through in our work with clients that enables impact and value in their organizations, as well as through our own investments, commitments, and actions across areas that help drive positive outcomes for our communities.
+Minimum 3years of hands-on work experience in data science / Machine learning 
+Minimum 3year of SQL experience
+Experience in DevOps and Machine Learning (ML) with hands-on experience with one or more cloud service providers 
+BE/BS in Computer Science, Math, Physics, or other technical fields. 
+Data Science – Hands on experience and strong knowledge of building machine learning models – supervised and unsupervised models 
+Programming Skills – Hands-on experience in statistical programming languages like Python and database query languages like SQL
+Statistics – Good applied statistical skills, including knowledge of statistical tests, distributions, regression, maximum likelihood estimators 
+Any Cloud – Experience in Databricks and ADF is desirable 
+Familiarity with Spark, Hive, Pig is an added advantage 
+Model deployment experience will be a plus 
+Experience with version control systems like GitHub and CI/CD tools 
+Experience in Exploratory data Analysis 
+Knowledge of ML Ops / DevOps and deploying ML models is required 
+Experience using MLFlow, Kubeflow etc. will be preferred 
+Experience executing and contributing to ML OPS automation infrastructure is good to have 
+Exceptional analytical and problem-solving skills
 
-Our people and culture
-
-Our inclusive culture empowers our people to be who they are, contribute their unique perspectives, and make a difference individually and collectively. It enables us to leverage different ideas and perspectives, and bring more creativity and innovation to help solve our clients' most complex challenges. This makes Deloitte one of the most rewarding places to work.
-
-Professional development
-
-At Deloitte, professionals have the opportunity to work with some of the best and discover what works best for them. Here, we prioritize professional growth, offering diverse learning and networking opportunities to help accelerate careers and enhance leadership skills. Our state-of-the-art DU: The Leadership Center in India, located in Hyderabad, represents a tangible symbol of our commitment to the holistic growth and development of our people. Explore DU: The Leadership Center in India .
-
-Benefits To Help You Thrive
-
-At Deloitte, we know that great people make a great organization. Our comprehensive rewards program helps us deliver a distinctly Deloitte experience that helps that empowers our professionals to thrive mentally, physically, and financially—and live their purpose. To support our professionals and their loved ones, we offer a broad range of benefits. Eligibility requirements may be based on role, tenure, type of employment and/ or other criteria. Learn more about what working at Deloitte can mean for you.
-
-Recruiting tips
-
-From developing a stand out resume to putting your best foot forward in the interview, we want you to feel prepared and confident as you explore opportunities at Deloitte. Check out recruiting tips from Deloitte recruiters.
+Job search faster with Premium
