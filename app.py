@@ -2,7 +2,8 @@ import streamlit as st
 from PyPDF2 import PdfReader
 import os
 import yaml
-#from langchain.document_loaders.pdf import PyPDFReader
+
+# from langchain.document_loaders.pdf import PyPDFReader
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
@@ -23,10 +24,13 @@ llm = ChatGroq(
     max_tokens=None,
     timeout=None,
     max_retries=2,
-    api_key=api_key
+    api_key=api_key,
 )
 
-def run_graph(data: dict, resume: str, job_description: str, personal_info: str) -> None:
+
+def run_graph(
+    data: dict, resume: str, job_description: str, personal_info: str
+) -> None:
     class State(TypedDict):
         messages: Annotated[list, add_messages]
         option: str
@@ -35,7 +39,9 @@ def run_graph(data: dict, resume: str, job_description: str, personal_info: str)
 
     def intro1(state: State) -> dict:
         state["option"] = st.session_state["option"]
-        state["messages"] = [AIMessage(content=f"Selected option is {state['option']}.")]
+        state["messages"] = [
+            AIMessage(content=f"Selected option is {state['option']}.")
+        ]
         return state
 
     def llm_fx(state: State) -> dict:
@@ -45,8 +51,7 @@ def run_graph(data: dict, resume: str, job_description: str, personal_info: str)
             resume=resume, job_description=job_description, personal_info=personal_info
         )
         prompt_template = PromptTemplate(
-            input_variables=input_variables,
-            template=template
+            input_variables=input_variables, template=template
         )
         chain = prompt_template | llm
         response = chain.invoke(data[key]["inputs"]).content
@@ -62,33 +67,36 @@ def run_graph(data: dict, resume: str, job_description: str, personal_info: str)
     graph1 = graph.compile()
 
     final_state = graph1.invoke({"messages": ["Welcome to the graph!"]})
-    final_response = final_state["messages"][-1].content  
+    final_response = final_state["messages"][-1].content
     return final_response
+
 
 def main():
     st.title("Graph App")
 
-    with open('/workspaces/github_analysis/src/prompts.yaml', 'r') as file:
+    with open("/workspaces/github_analysis/src/prompts.yaml", "r") as file:
         data = yaml.safe_load(file)
 
     options = list(data.keys())
     st.selectbox("Select an option", options, key="option")
 
-    uploaded_resume = st.file_uploader("Upload your resume", type=["pdf", "docx", "txt"])
+    uploaded_resume = st.file_uploader(
+        "Upload your resume", type=["pdf", "docx", "txt"]
+    )
 
     if uploaded_resume is not None:
-        
-    # Read the PDF file
-        if uploaded_resume.type == "application/pdf":
+
         # Read the PDF file
+        if uploaded_resume.type == "application/pdf":
+            # Read the PDF file
             pdf_reader = PdfReader(uploaded_resume)
-            
+
             # Extract the content
             resume = ""
             for page in pdf_reader.pages:
                 resume += page.extract_text()
     else:
-        resume=""
+        resume = ""
 
     job_description = st.text_area("Enter the job description")
     personal_info = st.text_area("Enter info about the person")
@@ -96,6 +104,7 @@ def main():
     if st.button("Run"):
         response = run_graph(data, resume, job_description, personal_info)
         st.write("Final Result:", response)
+
 
 if __name__ == "__main__":
     main()

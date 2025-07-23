@@ -12,3 +12,4 @@ gitpython
 pypdf
 streamlit
 PyPDF2
+black

@@ -12,3 +12,6 @@ git:
 	git status
 	git commit -m "recent edits"
 	git push
+
+format:
+	python3 -m black . --include '\.py'
