@@ -1,7 +1,8 @@
 import streamlit as st
+from PyPDF2 import PdfReader
 import os
 import yaml
-from langchain.document_loaders.pdf import PyPDFReader
+#from langchain.document_loaders.pdf import PyPDFReader
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
@@ -76,16 +77,23 @@ def main():
     uploaded_resume = st.file_uploader("Upload your resume", type=["pdf", "docx", "txt"])
 
     if uploaded_resume is not None:
-        pdf_reader = PyPDFReader(uploaded_resume)
-        resume = ""
-        for page in pdf_reader.pages:
-            resume += page.extract_text()
-        st.write("Resume uploaded successfully!")
+        
+    # Read the PDF file
+        if uploaded_resume.type == "application/pdf":
+        # Read the PDF file
+            pdf_reader = PdfReader(uploaded_resume)
+            
+            # Extract the content
+            resume = ""
+            for page in pdf_reader.pages:
+                resume += page.extract_text()
+    else:
+        resume=""
 
     job_description = st.text_area("Enter the job description")
     personal_info = st.text_area("Enter your personal info")
 
-    if st.button("Run") and uploaded_resume is not None:
+    if st.button("Run"):
         response = run_graph(data, resume, job_description, personal_info)
         st.write("Final Result:", response)
 
