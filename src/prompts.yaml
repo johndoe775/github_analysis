@@ -12,7 +12,8 @@ resume_and_job_decription_rewrite:
     1) Use the available experience, projects, and skills to rewrite the resume.
     2) Don't Halucinate.
     3) Don't use any external data but only the resume and job description.
-    4) Don't mention any comments and preamble in the response.
+    4) Don't mention any comments or notes and preamble in the response.
+    5) Give the output in markdown format with proper orientation and formatting.
     """
   inputs:
     {"resume":"resume", "job_description":"job_description"}
@@ -21,7 +22,7 @@ cold_mail_and_person_info:
   tool_use_case: "use this tool to write a professional and inquisitive cold mail tailored to a personal information of the recruiter, seeking job opportunities."
   prompt: |
     """
-    Using the following resume, write a professional and inquisitive cold mail tailored to the provided person's information, seeking job opportunities:
+    Using the following resume, write a professional and inquisitive cold mail tailored to the personal information of the recruiter, seeking job opportunities:
 
     Resume: {resume}
 
@@ -37,6 +38,7 @@ cold_mail_and_person_info:
     5) Don't mention any comments and preamble in the response.
     6) Make sure that the entire message is conveyed in not more than 5 lines.
     7) End with regards and the name of ther person whose resume is being used.
+    8) Give the output in markdown format in email format with proper orientation and use regards as ending greeeting followed by the name of the person from the resume.
     """
   
   inputs:
@@ -60,6 +62,7 @@ cold_mail_no_personal_info:
     5) Don't mention any comments and preamble in the response.
     6) Make sure that the entire message is conveyed in not more than 5 lines.
     7) End with regards and the name of ther person whose resume is being used.
+    8) Give the output in markdown format in email format with proper orientation and use regards as ending greeeting followed by the name of the person from the resume
     """
   
   inputs:

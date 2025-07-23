@@ -91,7 +91,7 @@ def main():
         resume=""
 
     job_description = st.text_area("Enter the job description")
-    personal_info = st.text_area("Enter your personal info")
+    personal_info = st.text_area("Enter info about the person")
 
     if st.button("Run"):
         response = run_graph(data, resume, job_description, personal_info)
