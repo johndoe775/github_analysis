@@ -39,6 +39,7 @@ cold_mail_and_person_info:
     6) Make sure that the entire message is conveyed in not more than 5 lines.
     7) End with regards and the name of ther person whose resume is being used.
     8) Give the output in markdown format in email format with proper orientation and use regards as ending greeeting followed by the name of the person from the resume.
+    9)Make sure that mail is properly paragraphed and formatted.
     """
   
   inputs:
@@ -63,6 +64,7 @@ cold_mail_no_personal_info:
     6) Make sure that the entire message is conveyed in not more than 5 lines.
     7) End with regards and the name of ther person whose resume is being used.
     8) Give the output in markdown format in email format with proper orientation and use regards as ending greeeting followed by the name of the person from the resume
+    9)Make sure that mail is properly paragraphed and formatted.
     """
   
   inputs:
