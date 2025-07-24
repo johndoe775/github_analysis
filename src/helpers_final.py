@@ -16,9 +16,18 @@ from langchain_core.messages import AIMessage
 load_dotenv()
 api_key = os.environ["groq"]
 
+
 # Initialize LLM
 class LLM:
-    def __init__(self, model="llama-3.3-70b-versatile", temperature=0, max_tokens=None, timeout=None, max_retries=2, api_key=api_key):
+    def __init__(
+        self,
+        model="llama-3.3-70b-versatile",
+        temperature=0,
+        max_tokens=None,
+        timeout=None,
+        max_retries=2,
+        api_key=api_key,
+    ):
         self.params = {
             "model": model,
             "temperature": temperature,
@@ -30,18 +39,26 @@ class LLM:
         self.llm = ChatGroq(**self.params)
 
 
-
 class State(TypedDict):
-            messages: Annotated[list, add_messages]
-            option: str
+    messages: Annotated[list, add_messages]
+    option: str
+
+
 class fx:
-    def __init__(self, data: dict, resume: str, job_description: str, personal_info: str,option: str):
+    def __init__(
+        self,
+        data: dict,
+        resume: str,
+        job_description: str,
+        personal_info: str,
+        option: str,
+    ):
         self.data = data
         self.resume = resume
         self.job_description = job_description
-        self.personal_info = personal_info 
+        self.personal_info = personal_info
         self.option = option
-        
+
     def create_graph_and_run(self):
         def intro1(state: State) -> dict:
             state["option"] = self.option
@@ -54,7 +71,9 @@ class fx:
             key = state["option"]
             input_variables = list(self.data[key]["inputs"].keys())
             template = self.data[key]["prompt"].format(
-                resume=self.resume, job_description=self.job_description, personal_info=self.personal_info
+                resume=self.resume,
+                job_description=self.job_description,
+                personal_info=self.personal_info,
             )
             prompt_template = PromptTemplate(
                 input_variables=input_variables, template=template
@@ -64,7 +83,6 @@ class fx:
             state["messages"].append(AIMessage(content=response))
             return state
 
-        
         self.graph = StateGraph(State)
         self.graph.add_node("intro", intro1)
         self.graph.add_node("llm_fx", llm_fx)
@@ -75,5 +93,3 @@ class fx:
         self.graph1 = self.graph.compile()
         self.final_state = self.graph1.invoke({"messages": ["Welcome to the graph!"]})
         return self.final_state["messages"][-1].content
-
-        

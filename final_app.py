@@ -3,6 +3,7 @@ from PyPDF2 import PdfReader
 import os
 import yaml
 from src.helpers_final import LLM, fx
+
 # from langchain.document_loaders.pdf import PyPDFReader
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
@@ -18,7 +19,7 @@ load_dotenv()
 api_key = os.environ["groq"]
 
 # Initialize LLM
-llm=LLM().llm
+llm = LLM().llm
 
 
 def main():
@@ -52,8 +53,14 @@ def main():
     personal_info = st.text_area("Enter info about the person")
 
     if st.button("Run"):
-        obj=fx(data=data, resume=resume, job_description=job_description, personal_info=personal_info, option=st.session_state["option"])
-        response=obj.create_graph_and_run()
+        obj = fx(
+            data=data,
+            resume=resume,
+            job_description=job_description,
+            personal_info=personal_info,
+            option=st.session_state["option"],
+        )
+        response = obj.create_graph_and_run()
         st.write("Final Result:", response)
 
 
