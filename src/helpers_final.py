@@ -31,20 +31,18 @@ class LLM:
 
 
 
+class State(TypedDict):
+            messages: Annotated[list, add_messages]
+            option: int
 class fx:
-    def __init__(self, data: dict, resume: str, job_description: str, personal_info: str, option: str):
+    def __init__(self, data: dict, resume: str, job_description: str, personal_info: str, option: int):
         self.data = data
         self.resume = resume
         self.job_description = job_description
         self.personal_info = personal_info 
         self.option = option
         
-        class State(TypedDict):
-            messages: Annotated[list, add_messages]
-            option: str
-
-        self.graph = StateGraph(State)
-
+    def create_graph_and_run(self,state: State):
         def intro1(state: State) -> dict:
             state["option"] = self.option
             state["messages"] = [
@@ -53,34 +51,30 @@ class fx:
             return state
 
         def llm_fx(state: State) -> dict:
-            key = int(state["option"])
-            key=list(self.data.keys())[key]
-            input_variables = list(data[key]["inputs"].keys())
-            template = data[key]["prompt"].format(
-                resume=resume, job_description=job_description, personal_info=personal_info
+            choice = state["option"]
+            key=list(self.data.keys())[choice]
+            input_variables = list(self.data[key]["inputs"].keys())
+            template = self.data[key]["prompt"].format(
+                resume=self.resume, job_description=self.job_description, personal_info=self.personal_info
             )
             prompt_template = PromptTemplate(
                 input_variables=input_variables, template=template
             )
             chain = prompt_template | LLM().llm
-            response = chain.invoke(data[key]["inputs"]).content
+            response = chain.invoke(self.data[key]["inputs"]).content
             state["messages"].append(AIMessage(content=response))
             return state
 
-        def create_graph_and_run(state: State):
-            self.graph.add_node(START, intro1)
-            self.graph.add_node("llm_fx", llm_fx)
-            self.graph.add_edge(START, "llm_fx")
-            self.graph.add_edge("llm_fx", END)
+        
+        self.graph = StateGraph(State)
+        self.graph.add_node("intro", intro1)
+        self.graph.add_node("llm_fx", llm_fx)
+        self.graph.add_edge(START, "intro")
+        self.graph.add_edge("intro", "llm_fx")
+        self.graph.add_edge("llm_fx", END)
 
-            self.graph1 = self.graph.compile()
-            self.final_state = self.graph1.invoke({"messages": ["Welcome to the graph!"]})
-            return self.final_state["messages"][-1].content
-
-        # Call the function to create the graph and run it, storing the final response
-        self.final_response = create_graph_and_run(self.graph.initial_state)
-
-        # Print the final response upon instantiation
-        print(self.final_response)
+        self.graph1 = self.graph.compile()
+        self.final_state = self.graph1.invoke({"messages": ["Welcome to the graph!"]})
+        return self.final_state["messages"][-1].content
 
         
