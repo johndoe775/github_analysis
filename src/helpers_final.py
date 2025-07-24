@@ -33,16 +33,16 @@ class LLM:
 
 class State(TypedDict):
             messages: Annotated[list, add_messages]
-            option: int
+            option: str
 class fx:
-    def __init__(self, data: dict, resume: str, job_description: str, personal_info: str, option: int):
+    def __init__(self, data: dict, resume: str, job_description: str, personal_info: str,option: str):
         self.data = data
         self.resume = resume
         self.job_description = job_description
         self.personal_info = personal_info 
         self.option = option
         
-    def create_graph_and_run(self,state: State):
+    def create_graph_and_run(self):
         def intro1(state: State) -> dict:
             state["option"] = self.option
             state["messages"] = [
@@ -51,8 +51,7 @@ class fx:
             return state
 
         def llm_fx(state: State) -> dict:
-            choice = state["option"]
-            key=list(self.data.keys())[choice]
+            key = state["option"]
             input_variables = list(self.data[key]["inputs"].keys())
             template = self.data[key]["prompt"].format(
                 resume=self.resume, job_description=self.job_description, personal_info=self.personal_info
