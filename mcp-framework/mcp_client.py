@@ -11,4 +11,4 @@ async def call_tool(name: str):
 
 
 asyncio.run(call_tool("Dinesh"))
-#fastmcp run my_server.py:mcp --transport http --port 8000
+# fastmcp run my_server.py:mcp --transport http --port 8000
