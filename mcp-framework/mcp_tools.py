@@ -1,6 +1,8 @@
 import yaml
-from ..src.helpers_final import LLM
+from llm import LLM
 from langchain.prompts import PromptTemplate
+
+
 
 with open("/workspaces/github_analysis/src/prompts.yaml", "r") as file:
         data = yaml.safe_load(file)
