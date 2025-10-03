@@ -17,4 +17,4 @@ format:
 	python3 -m black . --include '\.py'
 
 run:
-	streamlit run final_app.py
+	streamlit run app.py
