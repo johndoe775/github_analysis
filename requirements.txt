@@ -13,4 +13,3 @@ pypdf
 streamlit
 PyPDF2
 black
-fastmcp
