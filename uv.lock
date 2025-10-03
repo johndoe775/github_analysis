@@ -6,12 +6,6 @@ resolution-markers = [
     "python_full_version < '3.13'",
 ]
 
-[manifest]
-members = [
-    "github-analysis",
-    "mcp-framework",
-]
-
 [[package]]
 name = "aiohappyeyeballs"
 version = "2.6.1"
@@ -712,6 +706,44 @@ wheels = [
 name = "github-analysis"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "black" },
+    { name = "fastmcp" },
+    { name = "gitpython" },
+    { name = "ipywidgets" },
+    { name = "langchain" },
+    { name = "langchain-community" },
+    { name = "langchain-core" },
+    { name = "langchain-groq" },
+    { name = "langgraph" },
+    { name = "matplotlib" },
+    { name = "pandas" },
+    { name = "pypdf" },
+    { name = "pypdf2" },
+    { name = "python-dotenv" },
+    { name = "streamlit" },
+    { name = "tqdm" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "black", specifier = ">=25.9.0" },
+    { name = "fastmcp", specifier = ">=2.12.4" },
+    { name = "gitpython", specifier = ">=3.1.45" },
+    { name = "ipywidgets", specifier = "==8.1.2" },
+    { name = "langchain", specifier = ">=0.3.27" },
+    { name = "langchain-community", specifier = ">=0.3.30" },
+    { name = "langchain-core", specifier = ">=0.3.77" },
+    { name = "langchain-groq", specifier = ">=0.3.8" },
+    { name = "langgraph", specifier = ">=0.6.8" },
+    { name = "matplotlib", specifier = "==3.8.4" },
+    { name = "pandas", specifier = "==2.2.2" },
+    { name = "pypdf", specifier = ">=6.1.1" },
+    { name = "pypdf2", specifier = ">=3.0.1" },
+    { name = "python-dotenv", specifier = ">=1.1.1" },
+    { name = "streamlit", specifier = ">=1.50.0" },
+    { name = "tqdm", specifier = "==4.66.4" },
+]
 
 [[package]]
 name = "gitpython"
@@ -1390,49 +1422,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0c/9e/e65114795f359f314d7061f4fcb50dfe60026b01b52ad0b986b4631bf8bb/mcp-1.15.0.tar.gz", hash = "sha256:5bda1f4d383cf539d3c035b3505a3de94b20dbd7e4e8b4bd071e14634eeb2d72", size = 469622, upload-time = "2025-09-25T15:39:51.995Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c9/82/4d0df23d5ff5bb982a59ad597bc7cb9920f2650278ccefb8e0d85c5ce3d4/mcp-1.15.0-py3-none-any.whl", hash = "sha256:314614c8addc67b663d6c3e4054db0a5c3dedc416c24ef8ce954e203fdc2333d", size = 166963, upload-time = "2025-09-25T15:39:50.538Z" },
-]
-
-[[package]]
-name = "mcp-framework"
-version = "0.1.0"
-source = { virtual = "mcp-framework" }
-dependencies = [
-    { name = "black" },
-    { name = "fastmcp" },
-    { name = "gitpython" },
-    { name = "ipywidgets" },
-    { name = "langchain" },
-    { name = "langchain-community" },
-    { name = "langchain-core" },
-    { name = "langchain-groq" },
-    { name = "langgraph" },
-    { name = "matplotlib" },
-    { name = "pandas" },
-    { name = "pypdf" },
-    { name = "pypdf2" },
-    { name = "python-dotenv" },
-    { name = "streamlit" },
-    { name = "tqdm" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "black", specifier = ">=25.9.0" },
-    { name = "fastmcp", specifier = ">=2.12.4" },
-    { name = "gitpython", specifier = ">=3.1.45" },
-    { name = "ipywidgets", specifier = "==8.1.2" },
-    { name = "langchain", specifier = ">=0.3.27" },
-    { name = "langchain-community", specifier = ">=0.3.30" },
-    { name = "langchain-core", specifier = ">=0.3.77" },
-    { name = "langchain-groq", specifier = ">=0.3.8" },
-    { name = "langgraph", specifier = ">=0.6.8" },
-    { name = "matplotlib", specifier = "==3.8.4" },
-    { name = "pandas", specifier = "==2.2.2" },
-    { name = "pypdf", specifier = ">=6.1.1" },
-    { name = "pypdf2", specifier = ">=3.0.1" },
-    { name = "python-dotenv", specifier = ">=1.1.1" },
-    { name = "streamlit", specifier = ">=1.50.0" },
-    { name = "tqdm", specifier = "==4.66.4" },
 ]
 
 [[package]]
